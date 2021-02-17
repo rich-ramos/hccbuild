@@ -1,1 +1,1 @@
-alert('*test-setup*');
+import '../styles/styles.css';
