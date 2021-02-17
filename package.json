@@ -1,0 +1,25 @@
+{
+  "name": "hccbuild",
+  "version": "1.0.0",
+  "description": "Hoffman Contracting & Consulting Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rich-ramos/hccbuild.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rich-ramos/hccbuild/issues"
+  },
+  "homepage": "https://github.com/rich-ramos/hccbuild#readme",
+  "devDependencies": {
+    "webpack": "^5.22.0",
+    "webpack-cli": "^4.5.0"
+  }
+}

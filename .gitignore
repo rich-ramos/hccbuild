@@ -1,0 +1,6 @@
+# Extensions to ignore
+node_modules/
+
+# OS files and folders
+Thumbs.db
+.DS_Store
