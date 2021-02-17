@@ -14,8 +14,16 @@ module.exports = {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'src')
     },
+    devServer: {
+        before: function(app, server) {
+            server._watch('./src/**/*.html')
+        },
+        contentBase: path. join(__dirname, 'src'),
+        hot: true,
+        port: 3000,
+        host: '0.0.0.0'
+    },
     mode: 'development',
-    watch: true,
     module: {
         rules: [
             {
