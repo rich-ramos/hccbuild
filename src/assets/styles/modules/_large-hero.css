@@ -1,4 +1,18 @@
 .large-hero {
-    background-color: green;
-    height: 600px;
+    position: relative;
+
+    &__text-content {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        width: 100%;
+        text-align: center;
+        color: #f3f3f3;
+    }
+
+    &__title {
+        font-weight: 300;
+        font-size: 3rem;
+    }
 }
