@@ -1,0 +1,11 @@
+.container {
+    max-width: $max-width;
+    margin: auto;
+    overflow: hidden;
+
+    &--flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

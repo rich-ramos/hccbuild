@@ -1,0 +1,23 @@
+.primary-nav {
+    ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    li {
+        display: inline-block;
+        list-style: none;
+    }
+
+    a {
+        padding: .75rem;
+        color: $link-inactive-color;
+        text-decoration: none;
+    }
+
+    a:hover {
+        background-color: $white-logo-color;
+        color: $black-logo-color;
+    }
+}
