@@ -14,6 +14,7 @@
         padding: .75rem;
         color: $link-inactive-color;
         text-decoration: none;
+        display: block;
     }
 
     a:hover {
