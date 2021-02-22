@@ -15,4 +15,8 @@
             align-items: center;
         }
     }
+
+    &--medium {
+        max-width: 976px;
+    }
 }
