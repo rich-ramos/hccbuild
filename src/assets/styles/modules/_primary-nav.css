@@ -1,8 +1,17 @@
 .primary-nav {
+
+    &--flex {
+        display: flex;
+        flex-direction: column;
+
+        @mixin atMedium {
+            flex-direction: row;
+        }
+    }
+
     ul {
         margin: 0;
         padding: 0;
-        display: flex;
     }
 
     li {

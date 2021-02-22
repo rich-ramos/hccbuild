@@ -1,8 +1,41 @@
 .site-header {
-    padding: 1rem;
+    padding: .5rem;
     background-color: $black-logo-color;
 
+    @mixin atMedium {
+        padding: 1rem;
+    }
+
     &__logo {
-        width: 180px;
+        width: 150px;
+
+        @mixin atMedium {
+            width: 180px;
+        }
+    }
+
+    &__menu-icon {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: #fff;
+        height: 20px;
+        width: 20px;
+
+        @mixin atMedium {
+            display: none;
+        }
+    }
+
+    &__menu-content {
+        display: none;
+
+        @mixin atMedium {
+            display: block;
+        }
+
+        &--is-visible {
+            display: block;
+        }
     }
 }
