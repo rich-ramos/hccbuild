@@ -28,14 +28,23 @@
     }
 
     &__menu-content {
-        display: none;
+        height: 0;
+        transition: .3s ease-out;
+        width: 100%;
 
         @mixin atMedium {
-            display: block;
+            width: auto;
+            height: auto;
         }
 
         &--is-visible {
-            display: block;
+            margin-top: 1rem;
+            height: 6.875rem;
+
+            @mixin atMedium {
+                margin-top: 0;
+                height: auto;
+            }
         }
     }
 }

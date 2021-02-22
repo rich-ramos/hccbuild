@@ -12,22 +12,32 @@
     ul {
         margin: 0;
         padding: 0;
+        text-align: center;
     }
 
     li {
         display: inline-block;
         list-style: none;
+        border-bottom: #555 1px dotted;
+
+        @mixin atMedium {
+            border-bottom: 0;
+        }
     }
 
     a {
-        padding: .75rem;
+        padding: .5rem;
         color: $link-inactive-color;
         text-decoration: none;
         display: block;
+        transition: color .3s ease-in-out;
+
+        @mixin atMedium {
+            padding: .75rem;
+        }
     }
 
     a:hover {
-        background-color: $white-logo-color;
-        color: $black-logo-color;
+        color: $link-active-color;
     }
 }
