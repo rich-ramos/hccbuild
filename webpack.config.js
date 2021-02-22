@@ -2,9 +2,11 @@ const path = require('path');
 
 const postCSSPlugins = {
     plugins: [
+        require('postcss-import'),
+        require('postcss-mixins'),
         require('postcss-simple-vars'),
         require('postcss-nested'),
-        require('autoprefixer')
+        require('autoprefixer'),
     ]
 };
 
@@ -18,7 +20,7 @@ module.exports = {
         before: function(app, server) {
             server._watch('./src/**/*.html')
         },
-        contentBase: path. join(__dirname, 'src'),
+        contentBase: path.join(__dirname, 'src'),
         hot: true,
         port: 3000,
         host: '0.0.0.0'
