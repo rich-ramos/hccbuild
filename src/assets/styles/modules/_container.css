@@ -16,7 +16,15 @@
         }
     }
 
+    &__description {
+        text-align: center;
+    }
+
     &--medium {
         max-width: 976px;
+    }
+
+    &--small {
+        max-width: 500px;
     }
 }
