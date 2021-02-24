@@ -18,6 +18,8 @@
 
     &__description {
         text-align: center;
+        margin-top: 2.25rem;
+        line-height: 1.625rem;
     }
 
     &--medium {

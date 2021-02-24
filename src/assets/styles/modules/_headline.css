@@ -10,7 +10,7 @@
     }
 
     &--large {
-        font-size: 2.2rem;
+        font-size: 3.125rem;
     }
 
     &--light {
@@ -19,5 +19,13 @@
 
     &--color-grey {
         color: #555;
+    }
+
+    &--no-margin {
+        margin: 0;
+    }
+
+    &--b-margin-small {
+        margin-bottom: .5rem;
     }
 }
