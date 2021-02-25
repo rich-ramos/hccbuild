@@ -8,5 +8,7 @@
 @import "modules/_primary-nav";
 @import "modules/_page-section";
 @import "modules/_headline";
+@import "modules/_section-title";
 @import "modules/_row";
 @import "modules/_about-item";
+@import "modules/_service-item";

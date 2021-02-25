@@ -52,4 +52,16 @@
             }
         }
     }
+
+    &--gutter-small > div {
+        margin-right: 2rem;
+    }
+
+    &--wrap {
+        flex-wrap: wrap;
+
+        & > div {
+            flex: 1 2 20rem;
+        }
+    }
 }

@@ -3,6 +3,21 @@
     margin: auto;
     overflow: hidden;
 
+    &__card {
+        display: flex;
+        background: #fff;
+
+        &__icon {
+            position: relative;
+            height: 150px;
+            width: 270px;
+        }
+
+        &__body {
+            padding: 1rem;
+        }
+    }
+
     &--flex {
         display: flex;
         flex-direction: column;
@@ -22,8 +37,11 @@
         margin-top: 2.25rem;
         line-height: 1.625rem;
 
-        @mixin atMedium {
+        @mixin atSmall {
             text-align: center;
+        }
+        
+        @mixin atMedium {
             padding: 0;
         }
     }
