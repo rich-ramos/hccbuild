@@ -6,11 +6,19 @@
     }
 
     &--small {
-        font-size: 1rem;
+        font-size: .8rem;
+
+        @mixin atMedium {
+            font-size: 1rem;
+        }
     }
 
     &--large {
-        font-size: 3.125rem;
+        font-size: 1.7rem;
+
+        @mixin atMedium {
+            font-size: 3.125rem;
+        }
     }
 
     &--light {
