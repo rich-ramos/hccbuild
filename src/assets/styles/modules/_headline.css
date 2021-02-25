@@ -6,7 +6,7 @@
     }
 
     &--small {
-        font-size: .8rem;
+        font-size: .7rem;
 
         @mixin atMedium {
             font-size: 1rem;
@@ -14,7 +14,7 @@
     }
 
     &--large {
-        font-size: 1.7rem;
+        font-size: 1.8rem;
 
         @mixin atMedium {
             font-size: 3.125rem;
@@ -35,5 +35,9 @@
 
     &--b-margin-small {
         margin-bottom: .5rem;
+    }
+
+    &--uppercase {
+        text-transform: uppercase;
     }
 }
