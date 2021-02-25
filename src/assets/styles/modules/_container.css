@@ -15,4 +15,24 @@
             align-items: center;
         }
     }
+
+    &__description {
+        text-align: justify;
+        padding: 0 1.8rem;
+        margin-top: 2.25rem;
+        line-height: 1.625rem;
+
+        @mixin atMedium {
+            text-align: center;
+            padding: 0;
+        }
+    }
+
+    &--medium {
+        max-width: 976px;
+    }
+
+    &--small {
+        max-width: 500px;
+    }
 }
