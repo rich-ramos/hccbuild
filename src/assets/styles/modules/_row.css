@@ -53,15 +53,33 @@
         }
     }
 
-    &--gutter-small > div {
-        margin-right: 2rem;
+    &--column-until-small {
+        flex-direction: column;
+
+        @mixin atSmall {
+            flex-direction: row;
+        }
+    }
+
+    &--no-gutter-until-large > div {
+        margin-right: 0rem;
+
+        @mixin atLarge {
+            margin-right: 2rem;
+        }
     }
 
     &--wrap {
         flex-wrap: wrap;
 
         & > div {
-            flex: 1 2 20rem;
+            flex: 1 2 1rem;
+        }
+
+        @mixin atMedium {
+            & > div {
+                flex: 1 2 20rem;
+            }
         }
     }
 }

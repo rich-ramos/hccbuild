@@ -1,6 +1,14 @@
 .section-title {
     font-size: 1.9rem;
 
+    &--centered-until-large {
+        text-align: center;
+
+        @mixin atLarge {
+            text-align: unset;
+        }
+    }
+
     &--small {
         font-size: .7rem;
 

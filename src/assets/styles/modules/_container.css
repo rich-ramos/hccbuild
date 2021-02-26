@@ -10,11 +10,19 @@
         &__icon {
             position: relative;
             height: 150px;
-            width: 270px;
+            width: 100%
         }
 
         &__body {
             padding: 1rem;
+        }
+
+        &--column-until-medium {
+            flex-direction: column;
+
+            @mixin atMedium {
+                flex-direction: row;
+            }
         }
     }
 
@@ -42,7 +50,7 @@
         }
         
         @mixin atMedium {
-            padding: 0;
+            padding: 0 2rem;
         }
     }
 
