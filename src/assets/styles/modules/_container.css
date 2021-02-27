@@ -10,11 +10,20 @@
         &__icon {
             position: relative;
             height: 150px;
-            width: 100%
+            width: 100%;
+
+            @mixin atMedium {
+                height: auto;
+                width: 75%;
+            }
+
+            @mixin atLarge {
+                width: 60%;
+            }
         }
 
         &__body {
-            padding: 1rem;
+            padding: 1.875rem 1.5rem;
         }
 
         &--column-until-medium {

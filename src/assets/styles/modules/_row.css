@@ -1,6 +1,9 @@
 .row {
     display: flex;
-    justify-content: center;
+    
+    & > div {
+        flex: 1 1 auto;
+    }
 
     &--t-margin-small {
         margin-top: 2rem;
@@ -61,25 +64,7 @@
         }
     }
 
-    &--no-gutter-until-large > div {
-        margin-right: 0rem;
-
-        @mixin atLarge {
-            margin-right: 2rem;
-        }
-    }
-
     &--wrap {
         flex-wrap: wrap;
-
-        & > div {
-            flex: 1 2 1rem;
-        }
-
-        @mixin atMedium {
-            & > div {
-                flex: 1 2 20rem;
-            }
-        }
     }
 }

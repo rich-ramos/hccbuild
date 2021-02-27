@@ -1,5 +1,6 @@
 .service-item {
     padding: 1rem;
+    width: 21rem;
 
     &__title {
         margin: 0;
