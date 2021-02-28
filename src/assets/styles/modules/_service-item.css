@@ -1,6 +1,13 @@
 .service-item {
     padding: 1rem;
-    width: 21rem;
+
+    @mixin atSmall {
+        width: 14rem;
+    }
+
+    @mixin atMedium {
+        width: 21rem;
+    }
 
     &__title {
         margin: 0;
@@ -25,7 +32,7 @@
     }
 
     &__description {
-        text-align: left;
+        text-align: center;
 
         @mixin atMedium {
             text-align: justify;

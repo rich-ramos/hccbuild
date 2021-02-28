@@ -23,7 +23,11 @@
         }
 
         &__body {
-            padding: 1.875rem 1.5rem;
+            padding: 1rem;
+
+            @mixin atMedium {
+                padding: 1.875rem 1.5rem;
+            }
         }
 
         &--column-until-medium {
