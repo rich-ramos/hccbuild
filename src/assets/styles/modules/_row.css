@@ -1,6 +1,9 @@
 .row {
     display: flex;
-    justify-content: center;
+    
+    & > div {
+        flex: 1 1 auto;
+    }
 
     &--t-margin-small {
         margin-top: 2rem;
@@ -51,5 +54,17 @@
                 width: 100%;
             }
         }
+    }
+
+    &--column-until-small {
+        flex-direction: column;
+
+        @mixin atSmall {
+            flex-direction: row;
+        }
+    }
+
+    &--wrap {
+        flex-wrap: wrap;
     }
 }

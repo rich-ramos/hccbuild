@@ -1,8 +1,12 @@
-.headline {
+.section-title {
     font-size: 1.9rem;
 
-    &--centered {
+    &--centered-until-large {
         text-align: center;
+
+        @mixin atLarge {
+            text-align: unset;
+        }
     }
 
     &--small {
@@ -21,20 +25,12 @@
         }
     }
 
-    &--light {
-        font-weight: 100;
-    }
-
-    &--color-grey {
-        color: #555;
-    }
-
     &--no-margin {
         margin: 0;
     }
 
     &--b-margin-small {
-        margin-bottom: .5rem;
+        margin-bottom: 1rem;
     }
 
     &--uppercase {

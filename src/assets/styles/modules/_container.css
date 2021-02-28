@@ -3,6 +3,42 @@
     margin: auto;
     overflow: hidden;
 
+    &__card {
+        display: flex;
+        background: #fff;
+
+        &__icon {
+            position: relative;
+            height: 150px;
+            width: 100%;
+
+            @mixin atMedium {
+                height: auto;
+                width: 75%;
+            }
+
+            @mixin atLarge {
+                width: 60%;
+            }
+        }
+
+        &__body {
+            padding: 1rem;
+
+            @mixin atMedium {
+                padding: 1.875rem 1.5rem;
+            }
+        }
+
+        &--column-until-medium {
+            flex-direction: column;
+
+            @mixin atMedium {
+                flex-direction: row;
+            }
+        }
+    }
+
     &--flex {
         display: flex;
         flex-direction: column;
@@ -22,9 +58,12 @@
         margin-top: 2.25rem;
         line-height: 1.625rem;
 
-        @mixin atMedium {
+        @mixin atSmall {
             text-align: center;
-            padding: 0;
+        }
+        
+        @mixin atMedium {
+            padding: 0 2rem;
         }
     }
 

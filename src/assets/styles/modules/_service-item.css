@@ -1,0 +1,41 @@
+.service-item {
+    padding: 1rem;
+
+    @mixin atSmall {
+        width: 14rem;
+    }
+
+    @mixin atMedium {
+        width: 21rem;
+    }
+
+    &__title {
+        margin: 0;
+    }
+
+    &__description {
+        margin: 0;
+    }
+
+    &__icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: block;
+    }
+
+    &__title {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    &__description {
+        text-align: center;
+
+        @mixin atMedium {
+            text-align: justify;
+        }
+    }
+}
