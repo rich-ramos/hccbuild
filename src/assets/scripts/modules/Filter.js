@@ -27,8 +27,10 @@ class Filter {
     toggleActiveClass(active) {
         this.filterItems.forEach(el => {
             el.classList.remove('filter__item--active');
+            el.classList.add('filter__item--light');
         });
         active.classList.add('filter__item--active');
+        active.classList.remove('filter__item--light');
     }
 }
 

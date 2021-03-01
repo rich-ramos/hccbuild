@@ -6,7 +6,21 @@
     }
 
     &__item {
-        
+        &--no-grow {
+            flex: 0 1 auto!important;
+        }
+
+        &--align-end {
+            align-self: flex-end;
+        }
+    }
+
+    &--b-margin-small {
+        margin-bottom: 2rem;
+    }
+
+    &--space-between-items {
+        justify-content: space-between;
     }
 
     &--t-margin-small {
