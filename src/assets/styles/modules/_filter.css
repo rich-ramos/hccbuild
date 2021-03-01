@@ -1,0 +1,21 @@
+.filter {
+
+    &__list {
+        display: flex;
+    }
+
+    &__item {
+        flex: 1 1 auto;
+        color: #fff;
+        background: #333;
+        padding: .3rem;
+        margin-right: 1rem;
+        text-align: center;
+        list-style: none;
+        cursor: pointer;
+
+        &--active {
+            background: $link-active-color;
+        }
+    }
+}

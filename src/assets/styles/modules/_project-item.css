@@ -14,4 +14,12 @@
             opacity: 0.7;
         }
     }
+
+    &--show {
+        display: block;
+    }
+
+    &--hide {
+        display: none;
+    }
 }
