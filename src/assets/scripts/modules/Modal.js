@@ -1,26 +1,50 @@
 class Modal {
     constructor() {
-        this.modal = document.getElementById("modal");
-        this.image = document.getElementById("myImg");
-        this.modalImg = document.getElementById("img01");
-        this.caption = document.querySelector(".modal__caption");
-        this.close = document.querySelector(".modal__close");
+        this.injectHtml();
+        this.images = document.querySelectorAll('.project-item__image');
+        this.modal = document.querySelector('.modal');
+        this.modelImage = document.querySelector('.modal__image');
+        this.closeIcon = document.querySelector('.modal__icon-close');
+        this.caption = document.querySelector('.modal__caption');
         this.events();
     }
 
     events() {
-        this.image.addEventListener('click', () => this.DisplayModal());
-        this.close.addEventListener('click', () => this.CloseModal());
+        this.images.forEach(el => el.addEventListener('click', () => this.openTheModal(el)));
+        this.closeIcon.addEventListener('click', () => this.closeTheModal());
+        document.addEventListener('keyup', e => {
+            this.keyPressHandler(e);
+        });
     }
 
-    DisplayModal() {
-        this.modal.style.display = "block";
-        this.modalImg.src = this.image.src;
-        this.caption.innerHTML = this.image.alt;
+    keyPressHandler(e) {
+        if (e.keyCode == 27) {
+            this.closeTheModal();
+        }
     }
 
-    CloseModal() {
-        this.modal.style.display = "none";
+    openTheModal(element) {
+        this.modal.classList.add('modal--is-visible');
+        this.modelImage.classList.add('modal--zoom');
+        this.caption.classList.add('modal--zoom');
+
+        this.modelImage.src = element.src;
+        this.caption.innerHTML = element.alt; 
+    }
+
+    closeTheModal() {
+        this.modal.classList.remove('modal--is-visible');
+    }
+
+    injectHtml() {
+        document.body.insertAdjacentHTML('beforeend', 
+        `
+            <div class="modal">
+                <span class="modal__icon-close">&times;</span>
+                <img class="modal__image">
+                <div class="modal__caption"></div>
+            </div>
+        `)
     }
 }
 
