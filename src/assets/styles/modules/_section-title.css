@@ -1,6 +1,14 @@
 .section-title {
     font-size: 1.9rem;
 
+    &--centered-until-medium {
+        text-align: center;
+
+        @mixin atMedium {
+            text-align: unset;
+        }
+    }
+
     &--centered-until-large {
         text-align: center;
 
@@ -10,15 +18,16 @@
     }
 
     &--small {
-        font-size: .7rem;
+        font-size: .8rem;
+        color: #9b9b9b;
 
         @mixin atMedium {
-            font-size: 1rem;
+            font-size: 1.2rem;
         }
     }
 
     &--large {
-        font-size: 1.8rem;
+        font-size: 2rem;
 
         @mixin atMedium {
             font-size: 3.125rem;
@@ -30,7 +39,11 @@
     }
 
     &--b-margin-small {
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    &--b-margin-tiny {
+        margin-bottom: .2rem;
     }
 
     &--uppercase {

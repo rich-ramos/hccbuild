@@ -4,6 +4,14 @@
         margin: 0;
         padding: 0;
         display: flex;
+
+        &--column-until-medium {
+            flex-direction: column;
+    
+            @mixin atMedium {
+                flex-direction: row;
+            }
+        }
     }
 
     &__item {
@@ -26,6 +34,7 @@
         }
 
         &--active {
+            font-weight: bold;
             &::after {
                 content: '';
                 position: absolute;
