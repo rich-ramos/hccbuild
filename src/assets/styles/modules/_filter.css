@@ -7,9 +7,11 @@
 
         &--column-until-medium {
             flex-direction: column;
+            align-items: center;
     
             @mixin atMedium {
                 flex-direction: row;
+                align-items: unset;
             }
         }
     }
@@ -17,13 +19,17 @@
     &__item {
         position: relative;
         flex: 1 1 auto;
-        padding: 1rem 1.6rem;
+        padding: 1rem 1.2rem;
         letter-spacing: .125rem;
         color: #000;
         font-size: .7rem;
         text-align: center;
         list-style: none;
         cursor: pointer;
+
+        @mixin atMedium {
+            padding: 1rem 1.6rem;
+        }
 
         &--uppercase {
             text-transform: uppercase;
@@ -43,6 +49,10 @@
                 left: 50%;
                 width: 100%;
                 border-bottom: 2px solid $link-active-color;
+
+                @mixin atMedium {
+                    width: 80%;
+                }
             }
         }
     }
