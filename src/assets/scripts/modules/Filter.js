@@ -14,14 +14,10 @@ class Filter {
         var filter = element.getAttribute('data-filter');
         this.projectItems.forEach(el => {
             var matchingLink = el.getAttribute('data-filter');
-            if (filter == 'All' || filter == matchingLink) {
-                el.classList.add('project-item--show');
-                el.classList.remove('project-item--hide');
-            } else {
-                el.classList.add('project-item--hide');
-                el.classList.remove('project-item--show');
-            }
-        })
+            filter == 'All' || filter == matchingLink ? 
+                (el.classList.add('project-item--show'), el.classList.remove('project-item--hide')) : 
+                (el.classList.add('project-item--hide'), el.classList.remove('project-item--show'));
+        });
     }
 
     toggleActiveClass(active) {
