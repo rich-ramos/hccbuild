@@ -1,5 +1,5 @@
 .container {
-    max-width: $max-width;
+    max-width: 100%;
     margin: auto;
     overflow: hidden;
 
@@ -65,14 +65,10 @@
     }
 
     &__description {
-        text-align: justify;
+        text-align: center;
         padding: 0 1.8rem;
         margin-top: 2.25rem;
         line-height: 1.625rem;
-
-        @mixin atSmall {
-            text-align: center;
-        }
         
         @mixin atMedium {
             padding: 0 2rem;

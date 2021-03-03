@@ -86,7 +86,7 @@
             flex-wrap: wrap;
 
             & > div {
-                flex: 1 2 15rem;
+                flex: 1 1 auto;
             }
         }
 
