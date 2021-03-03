@@ -3,6 +3,18 @@
     margin: auto;
     overflow: hidden;
 
+    @mixin atSmall {
+        max-width: 550px;
+    }
+
+    @mixin atMedium {
+        max-width: 790px;
+    }
+
+    @mixin atLarge {
+        max-width: $max-width;
+    }
+
     &__card {
         display: flex;
         background: #fff;

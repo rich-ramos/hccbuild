@@ -1,0 +1,25 @@
+.project-item {
+    padding: 1rem;
+
+    @mixin atSmall { 
+        width: 18rem;
+    }
+
+    &__image {
+        display: block;
+        transition: 0.3s;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+    &--show {
+        display: block;
+    }
+
+    &--hide {
+        display: none;
+    }
+}
