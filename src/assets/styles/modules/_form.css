@@ -8,7 +8,6 @@
 
         &__label {
             font-weight: 300;
-            font-size: .8rem;
             margin-bottom: .5rem;
             display: inline-block;
 
@@ -20,7 +19,7 @@
             padding: .5rem;
             width: 100%;
             display: block;
-            transition: border .5s ease;
+            transition: border .3s ease;
 
             &:focus {
                 border: 2px solid $link-active-color;
