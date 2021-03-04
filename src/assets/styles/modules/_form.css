@@ -1,0 +1,37 @@
+.form {
+
+    &__group {
+        box-sizing: border-box;
+        padding: 1rem;
+        flex: 0 0 50%;
+        max-width: 50%;
+
+        &__label {
+            font-weight: 300;
+            font-size: .8rem;
+            margin-bottom: .5rem;
+            display: inline-block;
+
+            
+        }
+    
+        &__input {
+            box-sizing: border-box;
+            padding: .5rem;
+            width: 100%;
+            display: block;
+            transition: border .5s ease;
+
+            &:focus {
+                border: 2px solid $link-active-color;
+            }
+        }
+
+        &:nth-last-child(1) {
+            flex: 1 0 auto;
+            width: 100%;
+            max-width: unset;
+        }
+    }
+    
+}
