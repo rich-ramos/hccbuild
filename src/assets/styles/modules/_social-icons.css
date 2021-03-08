@@ -1,3 +1,23 @@
 .social-icons {
+    width: auto;
     
+    &__icon {
+        font-size: .8rem;
+        color: $yellow-logo-color;
+        flex: 1 1 auto;
+        margin-right: 2rem;
+        transition: 0.3s;
+
+        &:hover {
+            opacity: .7;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        @mixin atMedium {
+            font-size: .9rem;
+        }
+    }
 }

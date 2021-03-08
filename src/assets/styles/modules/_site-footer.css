@@ -1,12 +1,15 @@
 .site-footer {
-    padding: 1rem 0rem;
+    padding: 2rem 0rem;
     background: #000;
 
     &__logo {
-        width: 150px;
+        order: -1;
+        padding-bottom: 2rem;
+        width: 215px;
 
         @mixin atMedium {
-            width: 180px;
+            order: unset;
+            padding-bottom: 0;
         }
     }
 }

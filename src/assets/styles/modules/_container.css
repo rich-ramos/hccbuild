@@ -82,4 +82,12 @@
     &--medium {
         max-width: 760px;
     }
+
+    &--b-margin-until-medium {
+        margin-bottom: 2rem;
+
+        @mixin atMedium {
+            margin-bottom: 0;
+        }
+    }
 }
