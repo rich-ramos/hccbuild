@@ -1,0 +1,15 @@
+.site-footer {
+    padding: 2rem 0rem;
+    background: #000;
+
+    &__logo {
+        order: -1;
+        padding-bottom: 2rem;
+        width: 215px;
+
+        @mixin atMedium {
+            order: unset;
+            padding-bottom: 0;
+        }
+    }
+}
