@@ -1,6 +1,10 @@
 .section-title {
     font-size: 1.9rem;
 
+    &--color-light {
+        color: #9b9b9b;
+    }
+
     &--center {
         text-align: center;
     }
@@ -23,7 +27,6 @@
 
     &--small {
         font-size: .8rem;
-        color: #9b9b9b;
 
         @mixin atMedium {
             font-size: 1.2rem;
