@@ -12,10 +12,10 @@
     }
 
     &__logo {
-        width: 150px;
+        width: 50%;
 
-        @mixin atMedium {
-            width: 180px;
+        @mixin atSmall {
+            width: 215px;
         }
     }
 

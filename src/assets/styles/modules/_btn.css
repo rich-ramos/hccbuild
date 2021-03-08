@@ -4,6 +4,7 @@
     background: $black-logo-color;
     color: $link-inactive-color;
     transition: all .3s ease;
+    cursor: pointer;
 
     &__container {
         width: 100%;
