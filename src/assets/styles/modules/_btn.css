@@ -3,7 +3,7 @@
     border: none;
     background: $black-logo-color;
     color: $link-inactive-color;
-    transition: all .5s ease;
+    transition: all .3s ease;
 
     &__container {
         width: 100%;
