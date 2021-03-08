@@ -75,11 +75,11 @@
         }
     }
 
-    &--medium {
+    &--large {
         max-width: 976px;
     }
 
-    &--small {
-        max-width: 500px;
+    &--medium {
+        max-width: 760px;
     }
 }

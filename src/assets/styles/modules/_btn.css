@@ -1,0 +1,27 @@
+.btn {
+    padding: .8rem 2rem;
+    border: none;
+    background: $black-logo-color;
+    color: $link-inactive-color;
+    transition: all .3s ease;
+
+    &__container {
+        width: 100%;
+
+        &--t-margin {
+            margin-top: 1rem;
+        }
+
+        &--center {
+            text-align: center;
+        }
+    }
+
+    &--large {
+        width: 50%;
+    }
+
+    &:hover {
+        background: $red-logo-color;
+    }
+}

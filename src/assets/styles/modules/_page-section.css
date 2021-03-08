@@ -1,7 +1,7 @@
 .page-section {
     padding: 6.5rem 0;
 
-    &--services {
+    &--light-bg {
         background: #f4f4f4;
     }
 }
