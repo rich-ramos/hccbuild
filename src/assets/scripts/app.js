@@ -1,8 +1,10 @@
 import "../styles/styles.css";
-import MobileMenu from "./modules/MobileMenu.js";
-import Modal from "./modules/Modal.js";
-import Filter from "./modules/Filter.js";
+import MobileMenu from "./modules/MobileMenu";
+import Modal from "./modules/Modal";
+import Filter from "./modules/Filter";
+import RevealOnScroll from "./modules/RevealOnScroll"
 
+new RevealOnScroll(document.querySelectorAll(".service-item"), 75);
 var mobileMenu = new MobileMenu();
 new Modal();
 new Filter();
