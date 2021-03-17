@@ -16,7 +16,16 @@ class Form {
             method: 'POST',
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: new URLSearchParams(formData).toString()
-        }).then(() => console.log("Form successfully submitted")).catch((error) => alert(error));
+        }).then(() => this.displaySuccessfulMessage()).catch((error) => alert(error));
+    }
+
+    displaySuccessfulMessage() {
+        this.form.insertAdjacentElement("beforebegin", 
+        `
+            <div>
+                <h2>Form Submitted</h2>
+            </div>
+        `);
     }
 }
 
