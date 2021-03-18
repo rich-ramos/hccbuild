@@ -1,0 +1,12 @@
+.form-message {
+
+    &--success {
+        background: green;
+        color: #fff;
+    }
+
+    &--failure {
+        background: red;
+        color: #fff;
+    }
+}
