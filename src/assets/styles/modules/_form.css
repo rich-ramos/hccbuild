@@ -31,11 +31,14 @@
         box-sizing: border-box;
         padding: .5rem;
         width: 100%;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
         display: block;
-        transition: border .3s ease;
+        transition: border-color .15s ease-in-out;
 
-        &:focus {
-            border: 2px solid $link-active-color;
+        &--is-invalid {
+            outline: 0;
+            border-color: $text-error-color;
         }
     }
 }
