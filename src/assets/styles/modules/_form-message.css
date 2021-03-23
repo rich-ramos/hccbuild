@@ -5,8 +5,14 @@
         color: #fff;
     }
 
-    &--failure {
-        background: red;
-        color: #fff;
+    &--error {
+        color: $text-error-color;
+    }
+
+    &__input {
+        margin-top: .25rem;
+        &--error {
+            color: $text-error-color;
+        }
     }
 }
