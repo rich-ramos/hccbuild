@@ -27,26 +27,26 @@ class Form {
         let isValid = this.validateThatAllInputsAreNotEmpty();
         let isFormatted = this.validateThatAllInputsAreFormattedCorrectly();
         if (isValid && isFormatted) {
-            this.submitFormAjax(e.target);   
+            this.submitFormAjax();
+            // this.displaySubmitStatusForFormMessage(e.target, "Form Submitted", "success");
+            // this.removeParentElementAfterThreeSeconds(".form-message__header");
+            // this.clearFormInputs();
         }
+        // else {
+        //     this.displaySubmitStatusForFormMessage(e.target, "Please fill out all avaiable fields", "error");
+        //     this.removeParentElementAfterThreeSeconds(".form-message__header");
+        //     e.preventDefault();
+        // }
     }
 
-    submitFormAjax(form) {
+    submitFormAjax() {
         let myForm = document.querySelector(".form");
         let formData = new FormData(myForm);
         fetch('/', {
             method: 'POST',
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: new URLSearchParams(formData).toString()
-        }).then(() => {
-            this.displaySubmitStatusForFormMessage(form, "Form Submitted", "success");
-            this.removeParentElementAfterThreeSeconds(".form-message__header");
-            this.clearFormInputs();
-        }).catch((error) => {
-            this.displaySubmitStatusForFormMessage(form, "Please fill out all avaiable fields", "error");
-            this.removeParentElementAfterThreeSeconds(".form-message__header");
-            e.preventDefault();
-        });
+        }).then(() => this.displaySuccessfulMessage()).catch((error) => alert(error));
     }
 
     handleNameValidation(e) {
