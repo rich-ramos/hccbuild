@@ -27,7 +27,7 @@ class Form {
         let isValid = this.validateThatAllInputsAreNotEmpty();
         let isFormatted = this.validateThatAllInputsAreFormattedCorrectly();
         if (isValid && isFormatted) {
-            this.submitFormAjax(submitEvent);
+            this.submitFormAjax(e);
         } else {
             e.preventDefault();
             this.displaySubmitStatusForFormMessage(e.target, "Please fill out all avaiable fields", "error");
