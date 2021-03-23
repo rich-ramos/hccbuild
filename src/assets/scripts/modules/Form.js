@@ -9,7 +9,6 @@ class Form {
         this.service = document.getElementById("service");
         this.zip = document.getElementById("zip");
         this.message = document.getElementById("message");
-        this.submitForm = this.submitFormAjax(e).bind(this);
         this.events();
     }
 
@@ -28,7 +27,10 @@ class Form {
         let isValid = this.validateThatAllInputsAreNotEmpty();
         let isFormatted = this.validateThatAllInputsAreFormattedCorrectly();
         if (isValid && isFormatted) {
-            this.submitForm;
+            this.submitFormAjax(e);
+            this.displaySubmitStatusForFormMessage(e.target, "Form Submitted", "success");
+            this.removeParentElementAfterThreeSeconds(".form-message__header");
+            this.clearFormInputs();
         } else {
             e.preventDefault();
             this.displaySubmitStatusForFormMessage(e.target, "Please fill out all avaiable fields", "error");
@@ -44,11 +46,7 @@ class Form {
             method: 'POST',
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: new URLSearchParams(formData).toString()
-        }).then(() => {
-            this.displaySubmitStatusForFormMessage(e.target, "Form Submitted", "success");
-            this.removeParentElementAfterThreeSeconds(".form-message__header");
-            this.clearFormInputs();
-        }).catch((error) => console.log(error));
+        }).then(() => console.log("success")).catch((error) => console.log(error));
     }
 
     handleNameValidation(e) {
