@@ -9,6 +9,7 @@ class Form {
         this.service = document.getElementById("service");
         this.zip = document.getElementById("zip");
         this.message = document.getElementById("message");
+        this.submitForm = this.submitFormAjax(e).bind(this);
         this.events();
     }
 
@@ -27,7 +28,7 @@ class Form {
         let isValid = this.validateThatAllInputsAreNotEmpty();
         let isFormatted = this.validateThatAllInputsAreFormattedCorrectly();
         if (isValid && isFormatted) {
-            this.submitFormAjax(e);
+            this.submitForm;
         } else {
             e.preventDefault();
             this.displaySubmitStatusForFormMessage(e.target, "Please fill out all avaiable fields", "error");
