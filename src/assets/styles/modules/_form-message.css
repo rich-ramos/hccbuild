@@ -1,0 +1,18 @@
+.form-message {
+
+    &--success {
+        background: green;
+        color: #fff;
+    }
+
+    &--error {
+        color: $text-error-color;
+    }
+
+    &__input {
+        margin-top: .25rem;
+        &--error {
+            color: $text-error-color;
+        }
+    }
+}

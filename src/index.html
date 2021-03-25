@@ -235,36 +235,41 @@
         <h2 class="section-title section-title--no-margin section-title--b-margin-smaller section-title--center section-title--large">Contact Us</h2>
       </div>
         <div class="container container--medium">
-          <form action="" class="form">
+          <form name="contact" method="POST" data-netlify="true" class="form">
             <div class="form__fields">
               <div class="row row--column-until-medium row--wrap">
                 <div class="form__group form__group--full-width-until-medium">
-                  <label for="firstName" class="form__group__label">First Name</label>
-                  <input type="text" class="form__group__input" name="firstName">
+                  <label for="firstName" class="form__label">First Name</label>
+                  <input id="firstName" type="text" class="form__input" name="firstName" >
                 </div>
                 <div class="form__group form__group--full-width-until-medium">
-                  <label for="lastName" class="form__group__label">Last Name</label>
-                  <input type="text" class="form__group__input" name="lastName">
+                  <label for="lastName" class="form__label">Last Name</label>
+                  <input id="lastName" type="text" class="form__input" name="lastName" >
                 </div>
                 <div class="form__group form__group--full-width-until-medium">
-                  <label for="phone" class="form__group__label">Phone</label>
-                  <input type="text" class="form__group__input" name="phone">
+                  <label for="phone" class="form__label">Phone</label>
+                  <input id="phone" type="text" class="form__input" name="phone" >
                 </div>
                 <div class="form__group form__group--full-width-until-medium">
-                  <label for="email" class="form__group__label">Email</label>
-                  <input type="text" class="form__group__input" name="email">
+                  <label for="email" class="form__label">Email</label>
+                  <input id="email" type="email" class="form__input" name="email" >
                 </div>
                 <div class="form__group form__group--full-width-until-medium">
-                  <label for="service" class="form__group__label">Service</label>
-                  <input type="text" class="form__group__input" name="service">
+                  <label for="service" class="form__label">Service</label>
+                  <select id="service" class="form__input" name="service" >
+                    <option selected disabled hidden value="">Select a service</option>
+                    <option value="Remodeling">Remodeling</option>
+                    <option value="Redesign">Redesign</option>
+                    <option value="Addition">Addition</option>
+                  </select>
                 </div>
                 <div class="form__group form__group--full-width-until-medium">
-                  <label for="zip" class="form__group__label">Zip Code</label>
-                  <input type="text" class="form__group__input" name="zip">
+                  <label for="zip" class="form__label">Zip Code</label>
+                  <input id="zip" type="text" class="form__input" name="zip" >
                 </div>
                 <div class="form__group form__group--full-width-until-medium">
-                  <label for="message" class="form__group__label">Message</label>
-                  <textarea class="form__group__input" name="message" cols="30" rows="5"></textarea>
+                  <label for="message" class="form__label">Message</label>
+                  <textarea id="message" class="form__input" name="message" cols="30" rows="5" ></textarea>
                 </div>
               </div>
             </div>
