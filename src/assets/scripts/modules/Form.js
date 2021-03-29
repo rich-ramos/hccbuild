@@ -1,3 +1,5 @@
+import Mail from './Mail';
+
 class Form {
     constructor() {
         this.form = document.querySelector("form");
@@ -9,6 +11,7 @@ class Form {
         this.service = document.getElementById("service");
         this.zip = document.getElementById("zip");
         this.message = document.getElementById("message");
+        this.mail = new Mail();
         this.events();
     }
 
@@ -27,7 +30,8 @@ class Form {
         let isValid = this.validateThatAllInputsAreNotEmpty();
         let isFormatted = this.validateThatAllInputsAreFormattedCorrectly();
         if (isValid && isFormatted) {
-            this.submitFormAjax(e);
+            e.preventDefault();
+            this.processForm(e.target);
             this.displaySubmitStatusForFormMessage(e.target, "Form Submitted", "success");
             this.removeParentElementAfterThreeSeconds(".form-message__header");
             this.clearFormInputs();
@@ -38,15 +42,16 @@ class Form {
         }
     }
 
-    submitFormAjax(submitEvent) {
-        submitEvent.preventDefault();
-        let myForm = document.querySelector(".form");
-        let formData = new FormData(myForm);
+    processForm(form) {
+        const formData = new FormData(form);
+        const urlFormattedFormData = new URLSearchParams(formData).toString();
         fetch('/', {
             method: 'POST',
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams(formData).toString()
-        }).then(() => console.log("success")).catch((error) => console.log(error));
+            body: urlFormattedFormData
+        })
+        .then(() => this.mail.sendMail(formData))
+        .catch((error) => console.log(error));
     }
 
     handleNameValidation(e) {
