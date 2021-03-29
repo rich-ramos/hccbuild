@@ -1,0 +1,11 @@
+[build]
+    base = "."
+    functions = "cloud-functions"
+    publish = "src"
+
+[dev]
+    command = "npm run dev"
+    port = 8888
+    targetPort = 3000
+    publish = "src"
+    framework = "#custom"
