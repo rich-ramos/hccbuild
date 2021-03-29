@@ -6,3 +6,5 @@ Thumbs.db
 .DS_Store
 # Local Netlify folder
 .netlify
+# Enviroment Variables
+.env
