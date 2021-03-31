@@ -240,23 +240,23 @@
               <div class="row row--column-until-medium row--wrap">
                 <div class="form__group form__group--full-width-until-medium">
                   <label for="firstName" class="form__label">First Name</label>
-                  <input id="firstName" type="text" class="form__input" name="firstName" >
+                  <input id="firstName" type="text" class="form__input" name="firstName" data-validateType="NameValidate" data-inputMessageType="NameInputMessage">
                 </div>
                 <div class="form__group form__group--full-width-until-medium">
                   <label for="lastName" class="form__label">Last Name</label>
-                  <input id="lastName" type="text" class="form__input" name="lastName" >
+                  <input id="lastName" type="text" class="form__input" name="lastName" data-validateType="NameValidate" data-inputMessageType="NameInputMessage" >
                 </div>
                 <div class="form__group form__group--full-width-until-medium">
                   <label for="phone" class="form__label">Phone</label>
-                  <input id="phone" type="text" class="form__input" name="phone" >
+                  <input id="phone" type="text" class="form__input" name="phone" data-validateType="PhoneValidate" data-inputMessageType="PhoneInputMessage" >
                 </div>
                 <div class="form__group form__group--full-width-until-medium">
                   <label for="email" class="form__label">Email</label>
-                  <input id="email" type="email" class="form__input" name="email" >
+                  <input id="email" type="email" class="form__input" name="email" data-validateType="EmailValidate" data-inputMessageType="EmailInputMessage">
                 </div>
                 <div class="form__group form__group--full-width-until-medium">
                   <label for="service" class="form__label">Service</label>
-                  <select id="service" class="form__input" name="service" >
+                  <select id="service" class="form__input" name="service" data-validateType="ServiceValidate" data-inputMessageType="ServiceInputMessage" >
                     <option selected disabled hidden value="">Select a service</option>
                     <option value="Remodeling">Remodeling</option>
                     <option value="Redesign">Redesign</option>
@@ -265,11 +265,11 @@
                 </div>
                 <div class="form__group form__group--full-width-until-medium">
                   <label for="zip" class="form__label">Zip Code</label>
-                  <input id="zip" type="text" class="form__input" name="zip" >
+                  <input id="zip" type="text" class="form__input" name="zip" data-validateType="ZipValidate" data-inputMessageType="ZipInputMessage" >
                 </div>
                 <div class="form__group form__group--full-width-until-medium">
                   <label for="message" class="form__label">Message</label>
-                  <textarea id="message" class="form__input" name="message" cols="30" rows="5" ></textarea>
+                  <textarea id="message" class="form__input" name="message" cols="30" rows="5" data-validateType="MessageValidate" data-inputMessageType="MessageInputMessage" ></textarea>
                 </div>
               </div>
             </div>
