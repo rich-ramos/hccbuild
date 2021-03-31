@@ -1,28 +1,17 @@
 import Mail from './Mail';
+import ValidateFactory from './validate/factory/ValidateFactory';
+import InputMessageFactory from './input-message/factory/InputMessageFactory';
 
 class Form {
     constructor() {
         this.form = document.querySelector("form");
         this.formInputs = Array.from(document.querySelectorAll(".form__input"));
-        this.firstName = document.getElementById("firstName");
-        this.lastName = document.getElementById("lastName");
-        this.phone = document.getElementById("phone");
-        this.email = document.getElementById("email");
-        this.service = document.getElementById("service");
-        this.zip = document.getElementById("zip");
-        this.message = document.getElementById("message");
         this.mail = new Mail();
         this.events();
     }
 
     events() {
-        this.firstName.addEventListener("blur", (e) => this.handleNameValidation(e));
-        this.lastName.addEventListener("blur", (e) => this.handleNameValidation(e));
-        this.phone.addEventListener("blur", (e) => this.handlePhoneValidation(e));
-        this.email.addEventListener("blur", (e) => this.handleEmailValidation(e));
-        this.service.addEventListener("blur", (e) => this.handleServiceValidation(e));
-        this.zip.addEventListener("blur", (e) => this.handleZipValidation(e));
-        this.message.addEventListener("blur", (e) => this.handleMessageValidation(e));
+        this.formInputs.forEach((input) => input.addEventListener('blur', (e) => this.handleBlur(e)));
         this.form.addEventListener("submit", (e) => this.handleSubmit(e));
     }
 
@@ -54,41 +43,17 @@ class Form {
         .catch((error) => console.log(error));
     }
 
-    handleNameValidation(e) {
-        let isValid = this.validateNameInput(e.target);
+    handleBlur(e) {
+        const validator = ValidateFactory.createValidate(e.target.getAttribute('data-validateType'), e.target);
+        const isValid = validator.validate();
+        const inputMessage = InputMessageFactory.createInputMessage(e.target.getAttribute('data-inputMessageType'), e.target);
         if (!isValid) {
-            this.addClassToElement(e.target, "form__input--is-invalid");
-            this.displayInputMessage(`${e.target.previousElementSibling.innerText} must be between 2 and 10 characters`, e.target);
+            inputMessage.addIsInvalidClassToInputElement();
+            inputMessage.addInputMessage();
             e.target.isValidated = false;
         } else {
-            this.removeClassFromElement(e.target, "form__input--is-invalid");
-            this.removeSiblingElement(e.target);
-            e.target.isValidated = true;
-        }
-    }
-
-    handlePhoneValidation(e) {
-        let isValid = this.validatePhoneInput(e.target);
-        if (!isValid) {
-            this.addClassToElement(e.target, "form__input--is-invalid");
-            this.displayInputMessage(`${e.target.previousElementSibling.innerText} must be in a valid phone number format`, e.target);
-            e.target.isValidated = false;
-        } else {
-            this.removeClassFromElement(e.target, "form__input--is-invalid");
-            this.removeSiblingElement(e.target);
-            e.target.isValidated = true;
-        }
-    }
-
-    handleEmailValidation(e) {
-        let isValid = this.validateEmailInput(e.target);
-        if (!isValid) {
-            this.addClassToElement(e.target, "form__input--is-invalid");
-            this.displayInputMessage(`${e.target.previousElementSibling.innerText} must be in a valid email format`, e.target);
-            e.target.isValidated = false;
-        } else {
-            this.removeClassFromElement(e.target, "form__input--is-invalid");
-            this.removeSiblingElement(e.target);
+            inputMessage.removeIsInvalidClassFromInputElement();
+            inputMessage.removeInputMessage();
             e.target.isValidated = true;
         }
     }
@@ -104,60 +69,6 @@ class Form {
             this.removeSiblingElement(e.target);
             e.target.isValidated = true;
         }
-    }
-
-    handleZipValidation(e) {
-        let isValid = this.validateZipInput(e.target);
-        if (!isValid) {
-            this.addClassToElement(e.target, "form__input--is-valid");
-            this.displayInputMessage(`${e.target.previousElementSibling.innerText} must be at least 5 numbers`, e.target);
-            e.target.isValidated = false;
-        } else {
-            this.removeClassFromElement(e.target, "form__input--is-invalid");
-            this.removeSiblingElement(e.target);
-            e.target.isValidated = true;
-        }
-    }
-
-    handleMessageValidation(e) {
-        let isValid = this.validateMessageInput(e.target);
-        if (!isValid) {
-            this.addClassToElement(e.target, "form__input--is-valid");
-            this.displayInputMessage(`${e.target.previousElementSibling.innerText} must not be empty`, e.target);
-            e.target.isValidated = false;
-        } else {
-            this.removeClassFromElement(e.target, "form__input--is-invalid");
-            this.removeSiblingElement(e.target);
-            e.target.isValidated = true;
-        }
-    }
-    
-    validateNameInput(element) {
-        const re = /^[a-zA-Z]{2,10}$/;
-        return this.elementValueMatchesRegExp(element, re);
-    }
-
-    validatePhoneInput(element) {
-        const re = /^\(?\d{3}\)?[-. ]?\d{3}[-. ]?\d{4}$/;
-        return this.elementValueMatchesRegExp(element, re);
-    }
-
-    validateEmailInput(element) {
-        const re = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
-        return this.elementValueMatchesRegExp(element, re);
-    }
-
-    validateServiceInput(element) {
-        return element.selectedIndex !== 0 ? true : false;
-    }
-
-    validateZipInput(element) {
-        const re = /^[0-9]{5}(-[0-9]{4})?$/;
-        return this.elementValueMatchesRegExp(element, re);
-    }
-
-    validateMessageInput(element) {
-        return element.value === '' ? false : true;
     }
 
     validateThatAllInputsAreNotEmpty() {
@@ -184,26 +95,6 @@ class Form {
         this.formInputs.forEach((el) => el.value = '');
     }
 
-
-    addClassToElement(element, className) {
-        element.classList.add(className);
-    }
-
-    removeClassFromElement(element, className) {
-        element.classList.remove(className);
-    }
-
-    displayInputMessage(message, element) {
-        if(!(document.body.contains(element.nextElementSibling))) {
-            element.insertAdjacentHTML("afterend",
-            `
-                <div class="form-message">
-                    <p class="form-message__input form-message__input--error">${message}</p>
-                </div>
-            `);
-        }
-    }
-
     displaySubmitStatusForFormMessage(form , message, className) {
         if (!(document.body.contains(form.previousElementSibling))) {
             this.form.insertAdjacentHTML('beforebegin',
@@ -215,19 +106,10 @@ class Form {
         }
     }
 
-    removeSiblingElement(element) {
-        element.nextElementSibling !== null ? element.nextElementSibling.remove() : null;
-    }
-
     removeParentElementAfterThreeSeconds(classSelector) {
         setTimeout(() => {
             document.querySelector(classSelector).parentElement.remove();
         }, 3000);
-    }
-
-    elementValueMatchesRegExp(element, regExp) {
-        let isValid = (!regExp.test(element.value)) ? false : true;
-        return isValid;
     }
 }
 
