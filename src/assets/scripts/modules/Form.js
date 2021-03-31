@@ -58,19 +58,6 @@ class Form {
         }
     }
 
-    handleServiceValidation(e) {
-        let isValid = this.validateServiceInput(e.target);
-        if (!isValid) {
-            this.addClassToElement(e.target, "form__input--is-valid");
-            this.displayInputMessage(`${e.target.previousElementSibling.innerText} must have at least one selection`, e.target);
-            e.target.isValidated = false;
-        } else {
-            this.removeClassFromElement(e.target, "form__input--is-invalid");
-            this.removeSiblingElement(e.target);
-            e.target.isValidated = true;
-        }
-    }
-
     validateThatAllInputsAreNotEmpty() {
         let isValid = true;
         for (let element of this.formInputs.values()) {
