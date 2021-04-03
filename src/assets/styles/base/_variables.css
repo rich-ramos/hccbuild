@@ -5,4 +5,7 @@ $white-logo-color: #fff;
 $link-active-color: #981E32;
 $link-inactive-color: #f3f3f3;
 $text-error-color: #dc3545;
+$modal-menu-nav-color: #000;
+$modal-menu-nav-active-color: #981E32;
 $max-width: 1100px;
+$max-width-header: 1200px;
