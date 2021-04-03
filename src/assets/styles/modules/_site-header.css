@@ -12,6 +12,7 @@
     }
 
     &__logo {
+        margin: auto;
         width: 50%;
 
         @mixin atSmall {
@@ -66,18 +67,7 @@
         }
 
         &--close-x {
-            &::before {
-                transform: rotate(45deg) scaleX(1.25);
-            }
-
-            .site-header__menu-icon__middle {
-                opacity: 0;
-                transform: scaleX(0);
-            }
-
-            &::after {
-                transform: rotate(-45deg) scaleX(1.25) translateY(1px);
-            }
+            display: none;
         }
     }
 
@@ -89,16 +79,6 @@
         @mixin atMedium {
             width: auto;
             height: auto;
-        }
-
-        &--is-visible {
-            margin-top: 1rem;
-            height: 5.875rem;
-
-            @mixin atMedium {
-                margin-top: 0;
-                height: auto;
-            }
         }
     }
 }
