@@ -1,7 +1,9 @@
 .site-header-container {
+    height: 62px;
     max-width: 100%;
     margin: auto;
     overflow: hidden;
+    transition: .2s ease-in;
 
     @mixin atSmall {
         max-width: 550px;
@@ -9,6 +11,10 @@
 
     @mixin atMedium {
         max-width: 785px;
+
+        &--mini-nav {
+            height: 46px;
+        }
     }
 
     @mixin atLarge {

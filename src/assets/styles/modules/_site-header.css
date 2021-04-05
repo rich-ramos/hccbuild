@@ -8,15 +8,23 @@
     background-color: $black-logo-color;
 
     @mixin atMedium {
+        position: fixed;
         padding: 1rem 0;
     }
 
     &__logo {
         margin: auto;
-        width: 50%;
+        width: 60%;
+        transition: transform .2s ease-out;
 
         @mixin atSmall {
             width: 215px;
+        }
+
+        @mixin atMedium {
+            &--mini-nav-enabled {
+                transform: scale(.77);
+            }
         }
     }
 
@@ -72,11 +80,12 @@
     }
 
     &__menu-content {
-        height: 0;
+        display: none;
         transition: .3s ease-out;
         width: 100%;
 
         @mixin atMedium {
+            display: block;
             width: auto;
             height: auto;
         }
