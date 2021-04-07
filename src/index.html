@@ -28,11 +28,11 @@
         <div class="site-header__menu-content">
           <nav class="primary-nav">
             <ul class="primary-nav__list--flex">
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#projects">Our Work</a></li>
-              <li><a href="#contact">Contact Us</a></li>
+              <li><a href="#home" id="home-link">Home</a></li>
+              <li><a href="#about" id="about-link">About Us</a></li>
+              <li><a href="#services" id="services-link">Services</a></li>
+              <li><a href="#projects" id="projects-link">Our Work</a></li>
+              <li><a href="#contact" id="contact-link">Contact Us</a></li>
             </ul>
           </nav>
         </div>
@@ -40,7 +40,7 @@
     </div>
   </header>
 
-  <div id="home" class="large-hero">
+  <div id="home" class="large-hero" data-matching-link="#home-link">
     <div class="large-hero__text-content">
       <div class="container">
         <h1 class="large-hero__title">Hoffman <br>Contracting & Consulting</h1>
@@ -49,7 +49,7 @@
     </div>
   </div>
 
-  <div id="about" class="page-section">
+  <div id="about" class="page-section" data-matching-link="#about-link">
     <div class="container">
       <h3
         class="headline headline--centered headline--small headline--color-grey headline--no-margin headline--b-margin-small headline--uppercase">
@@ -95,7 +95,7 @@
     </div>
   </div>
 
-  <div id="services" class="page-section page-section--light-bg">
+  <div id="services" class="page-section page-section--light-bg" data-matching-link="#services-link">
     <div class="container">
       <h3
         class="section-title section-title--small section-title--uppercase section-title--no-margin section-title--centered-until-large section-title--b-margin-tiny section-title--color-light">
@@ -188,7 +188,7 @@
     </div>
   </div>
 
-  <div id="projects" class="page-section">
+  <div id="projects" class="page-section" data-matching-link="#projects-link">
     <div class="container">
       <div
         class="row row--align-center-until-medium row--column-until-medium row--space-between-items row--b-margin-small">
@@ -236,7 +236,7 @@
     </div>
   </div>
 
-  <div id="contact" class="page-section page-section--light-bg">
+  <div id="contact" class="page-section page-section--light-bg" data-matching-link="#contact-link">
     <div class="container">
       <div class="section-title__container">
         <h3 class="section-title section-title--no-margin section-title--small section-title--center section-title--uppercase section-title--color-light section-title--b-margin-tiny">Tell us about your next project</h3>

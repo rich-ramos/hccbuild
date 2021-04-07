@@ -32,10 +32,14 @@
 
         @mixin atMedium {
             padding: .75rem;
-        }
-    }
 
-    a:hover {
-        color: $link-active-color;
+            &:hover {
+                color: $link-active-color;
+            }
+
+            &.is-current-link {
+                color: $link-active-color;
+            }
+        }
     }
 }
