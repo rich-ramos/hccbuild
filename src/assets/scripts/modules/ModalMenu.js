@@ -9,7 +9,6 @@ class ModalMenu {
     }
 
     events() {
-        this.menuIcon.addEventListener('click', () => this.openTheModal());
         this.closeIcon.addEventListener('click', () => this.closeTheModal());
         this.modalMenuLinks.forEach((link) => link.addEventListener('click', () => this.closeTheModal()));
         document.addEventListener('keyup', (e) => this.keyPressHandler(e));

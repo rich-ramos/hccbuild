@@ -1,7 +1,6 @@
 class Modal {
     constructor() {
         this.injectHtml();
-        this.images = document.querySelectorAll('.project-item__image');
         this.modal = document.querySelector('.modal');
         this.modelImage = document.querySelector('.modal__image');
         this.closeIcon = document.querySelector('.modal__icon-close');
@@ -10,7 +9,6 @@ class Modal {
     }
 
     events() {
-        this.images.forEach(el => el.addEventListener('click', () => this.openTheModal(el)));
         this.closeIcon.addEventListener('click', () => this.closeTheModal());
         document.addEventListener('keyup', e => {
             this.keyPressHandler(e);
