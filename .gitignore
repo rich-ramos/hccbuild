@@ -5,6 +5,6 @@ node_modules/
 Thumbs.db
 .DS_Store
 # Local Netlify folder
-.netlify
+netlify.toml
 # Enviroment Variables
 .env
