@@ -21,7 +21,7 @@ class ValidateFactory {
 
         return (validateBase === undefined) 
             ? null
-            : (validateBase.name === ServiceValidate.name) 
+            : (type === "ServiceValidate") 
             ? new validateBase.prototype.constructor(target) 
             : new validateBase.prototype.constructor(target.value); 
     }
